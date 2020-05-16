@@ -1,0 +1,13 @@
+{
+  "main_menu": {
+    "home": "Home",
+    "about": "About"
+  },
+  "HelloWorld": {
+    "title": "Welcome to Your Vue.js App",
+    "description": "Vue.js Scaffolding is in progress"
+  },
+  "About": {
+    "info": "This is an about page"
+  }
+}

@@ -1,13 +1,26 @@
 <template>
   <div id="app">
+    <ChangeLanguage />
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">{{ $t("main_menu.home") }}</router-link> |
+      <router-link to="/about">{{ $t("main_menu.about") }}</router-link>
     </div>
     <router-view />
   </div>
 </template>
-
+<script lang="ts">
+import ChangeLanguage from "@/locale/ChangeLanguage.vue";
+import { defineComponent } from "@vue/composition-api";
+export default defineComponent({
+  name: "App",
+  components: {
+    ChangeLanguage
+  },
+  setup() {
+    return {};
+  }
+});
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
