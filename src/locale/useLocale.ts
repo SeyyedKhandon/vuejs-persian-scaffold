@@ -1,41 +1,63 @@
 import Vue from "vue";
 import store from "@/store";
 import VueI18n from "vue-i18n";
-import { ref, SetupContext } from "@vue/composition-api";
+import { onMounted, ref, SetupContext } from "@vue/composition-api";
 Vue.use(VueI18n);
+import { Locales } from "@/types";
+import supportedLocales from "./supportedLocales.json";
+import persian from "./fa.json";
+import english from "./en.json";
+import * as R from "ramda";
 
-import FA from "@/locale/fa.json";
-import EN from "@/locale/en.json";
+export const changeRTL = (rtl_state: boolean) =>
+  rtl_state
+    ? document.body.classList.add("rtl")
+    : document.body.classList.remove("rtl");
 
-export const getLocale = () =>
-  store.getters.getLanguage === "fa-IR" ? "FA" : "EN";
-
-export const i18n = (() => {
-  const locale = getLocale();
-  if (locale === "FA") document.body.classList.add("rtl");
-
-  return new VueI18n({
-    locale,
-    messages: {
-      FA,
-      EN
-    }
-  });
-})();
+export const getLanguagesTitles = (locale_json: Locales) =>
+  R.map(R.prop("title"), locale_json.locales);
+export const getLocaleInfo = R.curry(
+  (requested_prop: string, condition_prop: string, condition_value: string) => {
+    return R.pipe(
+      R.find(R.propEq(condition_prop, condition_value)),
+      // @ts-ignore
+      R.prop(requested_prop)
+    )(supportedLocales.locales);
+  }
+);
+const getLocaleTitle = getLocaleInfo("title", "name");
+const getLocaleName = getLocaleInfo("name", "title");
+const getLocaleSlugByName = getLocaleInfo("slug", "name");
+const getLocaleRTLBySlug = getLocaleInfo("rtl", "slug");
+const getLocaleRTLByName = getLocaleInfo("rtl", "name");
 
 export const useLocale = (context: SetupContext) => {
-  const languages = ref(["FA", "EN"]);
-  const currentLanguage = ref(getLocale());
+  const languages = ref(getLanguagesTitles(supportedLocales));
+  const currentLanguage = ref(getLocaleTitle(store.getters.getLanguage));
 
-  const updateLanguage = (SelectedLang = "EN") => {
-    const locale: string = SelectedLang === "FA" ? "fa-IR" : "en-US";
-    store.commit("setLanguage", locale);
-    context.root.$i18n.locale = SelectedLang;
-    context.emit("change", locale);
+  const updateLanguage = (title = "English") => {
+    R.pipe(
+      getLocaleName,
+      R.tap((name: string) => store.commit("setLanguage", name)),
+      R.tap(name => context.emit("change", name)),
+      getLocaleSlugByName,
+      R.tap(slug => (context.root.$i18n.locale = slug)),
+      getLocaleRTLBySlug,
+      changeRTL
+    )(title);
   };
+  onMounted(() => changeRTL(getLocaleRTLByName(store.getters.getLanguage)));
   return {
     languages,
     currentLanguage,
     updateLanguage
   };
 };
+
+export const i18n = new VueI18n({
+  locale: getLocaleSlugByName(store.getters.getLanguage),
+  messages: {
+    persian,
+    english
+  }
+});

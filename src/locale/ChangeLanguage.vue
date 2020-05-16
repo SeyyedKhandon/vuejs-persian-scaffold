@@ -33,9 +33,13 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
+.rtl {
+  text-align: right;
+  direction: rtl;
+}
 .dej_multiselect {
   &.locale_multiselect {
-    width: 65px !important;
+    width: 90px !important;
   }
 }
 </style>

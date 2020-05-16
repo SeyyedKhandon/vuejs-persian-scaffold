@@ -6,7 +6,7 @@ export interface AppConfig {
 }
 
 const state = {
-  language: "fa-IR"
+  language: "en-US"
 };
 
 export default {

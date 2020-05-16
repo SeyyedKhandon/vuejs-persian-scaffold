@@ -1,0 +1,16 @@
+{
+  "locales": [
+    {
+      "title": "پارسی",
+      "slug": "persian",
+      "name": "fa-IR",
+      "rtl": true
+    },
+    {
+      "title": "English",
+      "slug": "english",
+      "name": "en-US",
+      "rtl": false
+    }
+  ]
+}
