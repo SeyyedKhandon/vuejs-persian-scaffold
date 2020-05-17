@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
+    <h1 class="title-color">{{ msg }}</h1>
+    <p class="content-color">
       {{ $t("HelloWorld.description") }}
     </p>
   </div>

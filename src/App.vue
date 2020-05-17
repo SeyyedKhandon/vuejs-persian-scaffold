@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <ChangeLanguage />
+    <ThemeSwitch />
     <div id="nav">
       <router-link to="/">{{ $t("main_menu.home") }}</router-link> |
       <router-link to="/about">{{ $t("main_menu.about") }}</router-link>
@@ -10,36 +11,21 @@
 </template>
 <script lang="ts">
 import ChangeLanguage from "@/locale/ChangeLanguage.vue";
+import ThemeSwitch from "@/views/components/ThemeSwitch.vue";
 import { defineComponent } from "@vue/composition-api";
+import { useThemeInitialize } from "@/hooks/hook_app";
 export default defineComponent({
   name: "App",
   components: {
-    ChangeLanguage
+    ChangeLanguage,
+    ThemeSwitch
   },
   setup() {
+    useThemeInitialize();
     return {};
   }
 });
 </script>
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@import "assets/styles/main";
 </style>
