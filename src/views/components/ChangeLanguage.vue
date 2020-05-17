@@ -15,7 +15,7 @@
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
 import Multiselect from "vue-multiselect";
-import { useLocale } from "@/locale/useLocale";
+import { useLocale } from "@/hooks/useLocale";
 
 export default defineComponent({
   name: "ChangeLanguage",

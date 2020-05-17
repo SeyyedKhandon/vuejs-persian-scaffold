@@ -1,13 +1,14 @@
 import Vue from "vue";
+import * as R from "ramda";
 import store from "@/store";
 import VueI18n from "vue-i18n";
 import { onMounted, ref, SetupContext } from "@vue/composition-api";
-Vue.use(VueI18n);
 import { Locales } from "@/types";
-import supportedLocales from "./supportedLocales.json";
-import persian from "./fa.json";
-import english from "./en.json";
-import * as R from "ramda";
+import supportedLocales from "@/api/mock_db/locale/supportedLocales.json";
+import persian from "@/api/mock_db/locale/persian.json";
+import english from "@/api/mock_db/locale/english.json";
+
+Vue.use(VueI18n);
 
 export const changeRTL = (rtl_state: boolean) =>
   rtl_state

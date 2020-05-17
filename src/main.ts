@@ -1,5 +1,5 @@
 import Vue from "vue";
-import { i18n } from "@/locale/useLocale";
+import { i18n } from "@/hooks/useLocale";
 import VueCompositionApi from "@vue/composition-api";
 Vue.use(VueCompositionApi);
 import App from "./App.vue";

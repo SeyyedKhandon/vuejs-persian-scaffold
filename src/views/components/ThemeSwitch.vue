@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
-import { useThemeManager } from "../../hooks/hook_theme";
+import { useThemeManager } from "@/hooks/useTheme";
 
 export default defineComponent({
   name: "themeSwitch",

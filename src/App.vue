@@ -10,10 +10,10 @@
   </div>
 </template>
 <script lang="ts">
-import ChangeLanguage from "@/locale/ChangeLanguage.vue";
+import ChangeLanguage from "@/views/components/ChangeLanguage.vue";
 import ThemeSwitch from "@/views/components/ThemeSwitch.vue";
 import { defineComponent } from "@vue/composition-api";
-import { useThemeInitialize } from "@/hooks/hook_app";
+import { useThemeInitialize } from "@/hooks/useApp";
 export default defineComponent({
   name: "App",
   components: {
