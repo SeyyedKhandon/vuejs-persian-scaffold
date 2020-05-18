@@ -1,12 +1,10 @@
 import Vue from "vue";
 import { i18n } from "@/hooks/useLocale";
-import VueCompositionApi from "@vue/composition-api";
-Vue.use(VueCompositionApi);
+import "./plugin";
 import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
-import "vue-multiselect/dist/vue-multiselect.min.css";
 
 Vue.config.productionTip = false;
 

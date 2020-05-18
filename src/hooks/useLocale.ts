@@ -9,6 +9,7 @@ import persian from "@/api/mock_db/locale/persian.json";
 import english from "@/api/mock_db/locale/english.json";
 
 Vue.use(VueI18n);
+
 export const changeRTL = (rtl_state: boolean) =>
   rtl_state
     ? document.body.classList.add("rtl")
@@ -16,6 +17,7 @@ export const changeRTL = (rtl_state: boolean) =>
 
 export const getLanguagesTitles = (locale_json: Locales) =>
   R.map(R.prop("title"), locale_json.locales);
+
 export const getLocaleInfo = R.curry(
   (requested_prop: string, condition_prop: string, condition_value: string) => {
     return R.pipe(
