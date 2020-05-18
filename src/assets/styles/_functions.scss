@@ -1,0 +1,11 @@
+@function z($key) {
+  @return map-get($z-indexes, $key);
+}
+
+@function gradient($key) {
+  @return map-get($gradients, $key);
+}
+
+@function shadow($key) {
+  @return map-get($shadows, $key);
+}

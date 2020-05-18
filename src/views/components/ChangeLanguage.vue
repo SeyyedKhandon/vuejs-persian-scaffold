@@ -33,5 +33,5 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
-@import "src/assets/styles/components/ChangeLanguage";
+/*@import "src/assets/styles/components/ChangeLanguage";*/
 </style>

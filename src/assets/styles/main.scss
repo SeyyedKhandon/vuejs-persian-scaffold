@@ -1,32 +1,21 @@
 @charset "UTF-8";
+// 3rd-party libraries
+@import "libs";
+
+// Our SCSS
+@import "reset";
+@import "variables";
+@import "functions";
+@import "mixins";
+
+// themes
 @import "themes";
-body {
-  background-color: var(--app-background-color);
-}
-.title-color,
-h3 {
-  color: var(--title-color);
-}
-.content-color {
-  color: var(--content-color);
-}
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-}
+// layout
+@import "layouts";
 
-#nav {
-  padding: 30px;
+// pages
+@import "pages";
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+// components
+@import "components";

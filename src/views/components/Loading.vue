@@ -21,6 +21,6 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
-@import "src/assets/styles/components/Loading";
+<style lang="scss">
+/*@import "src/assets/styles/components/Loading";*/
 </style>

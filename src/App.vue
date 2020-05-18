@@ -36,5 +36,4 @@ export default defineComponent({
 </script>
 <style lang="scss">
 @import "assets/styles/main";
-@import "~vue-multiselect/dist/vue-multiselect.min.css";
 </style>
