@@ -1,7 +1,7 @@
 <template>
   <multiselect
     v-model="currentLanguage"
-    class="dej_multiselect locale_multiselect small_multiselect"
+    class="locale_multiselect"
     :options="languages"
     :close-on-select="true"
     :searchable="false"
@@ -33,13 +33,5 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
-.rtl {
-  text-align: right;
-  direction: rtl;
-}
-.dej_multiselect {
-  &.locale_multiselect {
-    width: 90px !important;
-  }
-}
+@import "src/assets/styles/components/ChangeLanguage";
 </style>

@@ -16,7 +16,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.theme-switch {
-  cursor: pointer;
-}
+@import "src/assets/styles/components/ThemeSwitch";
 </style>

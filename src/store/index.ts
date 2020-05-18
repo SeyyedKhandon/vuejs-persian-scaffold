@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import appConfig from "./modules/appConfig";
+import appLoading from "./modules/loading";
 import createPersistedState from "vuex-persistedstate";
 import SecureLS from "secure-ls";
 import securityOptions from "@/store/securityOptions";
@@ -9,7 +10,8 @@ const ls = new SecureLS(securityOptions);
 Vue.use(Vuex);
 export default new Vuex.Store({
   modules: {
-    appConfig
+    appConfig,
+    appLoading
   },
   plugins: [
     createPersistedState({
