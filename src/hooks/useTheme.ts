@@ -12,9 +12,6 @@ export const useThemeManager = () => {
       _ => store.commit("setTheme", _)
     )(store.getters.getTheme);
   };
-  const loadTheme = () => {
-    document.body.classList.add("app-background");
-    themeUpdate();
-  };
+  const loadTheme = themeUpdate;
   return { setThemeToHTML, themeUpdate, loadTheme };
 };

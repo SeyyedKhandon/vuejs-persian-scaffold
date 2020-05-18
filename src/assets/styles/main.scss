@@ -1,6 +1,6 @@
 @charset "UTF-8";
-@import "theme";
-.app-background {
+@import "themes";
+body {
   background-color: var(--app-background-color);
 }
 .title-color,
