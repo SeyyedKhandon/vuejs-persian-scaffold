@@ -9,5 +9,24 @@
   },
   "About": {
     "info": "این صفحه درباره ما است."
-  }
+  },
+  "toastMessages": {
+    "notSavedChanges": {
+      "title": "تغییرات ذخیره نشده",
+      "text": "مایلید تغییراتتان را ذخیره نماییم؟",
+      "confirm": "بله",
+      "cancel": "خیر"
+    },
+    "deleteRequest": {
+      "title": "عملیات حذف {msg}",
+      "text": "آیا از حذف {title} با نام \"{item_label}\" مطمئن هستید؟",
+      "confirm": "بله، حذفش کن",
+      "cancel": "خیر، نگهش دار"
+    },
+    "deleteResponse": {
+      "title": "عملیات حذف",
+      "confirm": "باشه"
+    }
+  },
+  "defaultAPIErrorMessage": "یک خطای غیرمنتظره در شبکه رخ داده است."
 }

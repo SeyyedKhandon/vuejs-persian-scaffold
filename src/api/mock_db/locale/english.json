@@ -9,5 +9,24 @@
   },
   "About": {
     "info": "This is an about page"
-  }
+  },
+  "toastMessages": {
+    "notSavedChanges": {
+      "title": "Unsaved changes",
+      "text": "Want to save your changes?",
+      "confirm": "Yes",
+      "cancel": "No"
+    },
+    "deleteRequest": {
+      "title": "{msg} removal operation",
+      "text": "Are you sure you want to delete a {title} called \"{item_label}\"?",
+      "confirm": "Yes, delete it",
+      "cancel": "No, keep it"
+    },
+    "deleteResponse": {
+      "title": "Delete operations",
+      "confirm": "Ok"
+    }
+  },
+  "defaultAPIErrorMessage": "An unknown network error has occurred."
 }

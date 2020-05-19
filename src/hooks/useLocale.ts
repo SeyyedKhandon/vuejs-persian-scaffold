@@ -3,7 +3,7 @@ import * as R from "ramda";
 import store from "@/store";
 import VueI18n from "vue-i18n";
 import { onMounted, ref, SetupContext } from "@vue/composition-api";
-import { Locales } from "@/types";
+import { Locales } from "@/types/locale";
 import supportedLocales from "@/api/mock_db/locale/supportedLocales.json";
 import persian from "@/api/mock_db/locale/persian.json";
 import english from "@/api/mock_db/locale/english.json";
@@ -55,6 +55,24 @@ export const useLocale = (context: SetupContext) => {
     updateLanguage
   };
 };
+
+// class I18N {
+//   private static instance: VueI18n;
+//   private constructor() {}
+//   public static getInstance(): VueI18n {
+//     if (!I18N.instance) {
+//       I18N.instance = new VueI18n({
+//         locale: getLocaleSlugByName(store.getters.getLanguage),
+//         messages: {
+//           persian,
+//           english
+//         }
+//       });
+//     }
+//     return I18N.instance;
+//   }
+// }
+// export const i18n = I18N.getInstance();
 
 export const i18n = new VueI18n({
   locale: getLocaleSlugByName(store.getters.getLanguage),
