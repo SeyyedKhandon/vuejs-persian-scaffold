@@ -3,10 +3,6 @@ import { getEndPoints } from "@/api/api_helper/EndPointHelper";
 import { OAuthToken } from "@/types/api";
 import store from "@/store";
 
-export const getConfig = (url: string) => requestConfig("get", url, {});
-export const deleteConfig = (url: string) => requestConfig("delete", url, {});
-export const postConfig = (url: string, data: any) =>
-  requestConfig("post", url, data);
 export const requestConfig = (method: Method, url: string, data: any = {}) => {
   return {
     method,
@@ -15,6 +11,10 @@ export const requestConfig = (method: Method, url: string, data: any = {}) => {
     baseURL: getEndPoints().hostUri
   };
 };
+export const getConfig = (url: string) => requestConfig("get", url, {});
+export const deleteConfig = (url: string) => requestConfig("delete", url, {});
+export const postConfig = (url: string, data: any) =>
+  requestConfig("post", url, data);
 export const retryFailedOn401Request = (
   token: OAuthToken,
   original_request: AxiosRequestConfig,

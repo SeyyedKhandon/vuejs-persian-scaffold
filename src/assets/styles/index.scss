@@ -1,8 +1,5 @@
 @charset "UTF-8";
-.rtl {
-  text-align: right;
-  direction: rtl;
-}
+
 // 3rd-party libraries
 @import "libs";
 
@@ -23,3 +20,6 @@
 
 // components
 @import "components";
+
+// RTL (it should be the last one)
+@import "rtl";

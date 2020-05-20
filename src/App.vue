@@ -33,5 +33,5 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
-@import "assets/styles/main";
+@import "assets/styles";
 </style>
