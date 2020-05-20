@@ -18,7 +18,7 @@ export const useAppVersionInfo = () => {
     );
     beautifulLog(`Build %c v${AppVersion.packageBuildVersion}`);
     beautifulLog(`Dev %c v${AppVersion.packageDevVersion}`);
-    console.log(`%c ${" ".repeat(5)} '`, `background: #cccccc8a;`);
+    console.log(`%c ${"-".repeat(30)} `, `background: #bbbbbb36;`);
   };
   return { beautifulLog, showVersion, AppVersion };
 };

@@ -19,4 +19,3 @@ export const showWarningToast = (message: string) => {
 export const showErrorToast = (message: string) => {
   showToast("error", message);
 };
-

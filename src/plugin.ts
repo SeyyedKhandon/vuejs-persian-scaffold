@@ -5,4 +5,3 @@ Vue.use(VueCompositionApi);
 // register vue-snotify
 import Snotify from "vue-snotify";
 Vue.use(Snotify);
-

@@ -8,7 +8,6 @@ import store from "./store";
 
 Vue.config.productionTip = false;
 
-
 new Vue({
   i18n,
   router,
