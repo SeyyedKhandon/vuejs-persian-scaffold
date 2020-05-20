@@ -8,29 +8,15 @@ import { i18n } from "@/hooks/useLocale";
 
 // Axios onRequestFulfilled
 export const onRequestFulfilled = (config: any) => {
-  const requestHandler = () => {
-    addDefaultHeader();
-    switch (location.pathname) {
-      case "/login":
-        addLoginPageHeaders();
-        break;
-      case "/init":
-        break;
-      default:
-        addAccessTokenToHeader();
-        break;
-    }
-    return config;
-  };
+  const addHeader = (key: string, value: string) =>
+    (config.headers[key] = value);
+  const addHeaders = (headers: any) =>
+    (config.headers = { ...config.headers, ...headers });
   const addDefaultHeader = () =>
     addHeaders({
       "Accept-Language": store.getters.getLanguage,
       "Content-Type": "application/json"
     });
-  const addHeader = (key: string, value: string) =>
-    (config.headers[key] = value);
-  const addHeaders = (headers: any) =>
-    (config.headers = { ...config.headers, ...headers });
   const addLoginPageHeaders = () => {
     try {
       let provider = store.getters.getSelectedProviderInfo;
@@ -47,12 +33,6 @@ export const onRequestFulfilled = (config: any) => {
       throw new Error(e);
     }
   };
-  const addAccessTokenToHeader = () => {
-    let token = store.getters.getOAuthToken;
-    if (token) {
-      addHeader("Authorization", getAccessToken(token));
-    }
-  };
   const getAccessToken = (token: string): string => {
     try {
       return "Bearer " + (JSON.parse(token) as OAuthToken).access_token;
@@ -61,21 +41,28 @@ export const onRequestFulfilled = (config: any) => {
       return "";
     }
   };
+  const addAccessTokenToHeader = () => {
+    const token = store.getters.getOAuthToken;
+    if (token) {
+      addHeader("Authorization", getAccessToken(token));
+    }
+  };
+  const requestHandler = () => {
+    addDefaultHeader();
+    switch (location.pathname) {
+      case "/login":
+        addLoginPageHeaders();
+        break;
+      case "/init":
+        break;
+      default:
+        addAccessTokenToHeader();
+        break;
+    }
+    return config;
+  };
   // run the handler
   return requestHandler();
-};
-
-// Axios onResponseRejected
-export const onResponseRejected = async (error: AxiosError) => {
-  let message = "";
-  if (error.response) {
-    if (isItInLastPeriodErrorHistory(error)) throw error;
-    message = regularHttpErrorHandler(error);
-  } else {
-    message = otherErrorHandler(error);
-  }
-  showErrorToast(message);
-  throw error;
 };
 
 // Error Handlers
@@ -88,7 +75,7 @@ const isItInLastPeriodErrorHistory = (error: AxiosError) => {
 const regularHttpErrorHandler = (error: AxiosError) => {
   const err_res = error.response!;
   const status = err_res.status || 0;
-  let message = err_res.data
+  const message = err_res.data
     ? err_res.data.error_description ||
       err_res.data.message ||
       err_res.statusText
@@ -112,6 +99,19 @@ const regularHttpErrorHandler = (error: AxiosError) => {
 const otherErrorHandler = (error: AxiosError) => {
   const isNetworkError = (current_message: string) =>
     error.message ? error.message : current_message;
-  let message = i18n.t("defaultAPIErrorMessage") as string;
+  const message = i18n.t("defaultAPIErrorMessage") as string;
   return isNetworkError(message);
+};
+
+// Axios onResponseRejected
+export const onResponseRejected = async (error: AxiosError) => {
+  let message = "";
+  if (error.response) {
+    if (isItInLastPeriodErrorHistory(error)) throw error;
+    message = regularHttpErrorHandler(error);
+  } else {
+    message = otherErrorHandler(error);
+  }
+  showErrorToast(message);
+  throw error;
 };

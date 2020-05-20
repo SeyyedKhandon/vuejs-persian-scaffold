@@ -6,7 +6,7 @@ export interface AppLoading {
 }
 
 const state = {
-  loading: true
+  loading: false
 };
 
 export default {
