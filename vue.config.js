@@ -33,6 +33,10 @@ module.exports = {
     port: 8080,
     open: true,
     proxy: {
+      "^/repos": {
+        target: "https://api.github.com",
+        changeOrigin: true
+      },
       "^/(api|actuator|authentication-server)": {
         target: "https://your-internet-server-address.net",
         changeOrigin: true

@@ -18,7 +18,7 @@ import Loading from "@/views/components/Loading.vue";
 import { defineComponent } from "@vue/composition-api";
 import { useThemeInitialize } from "@/hooks/useApp";
 import { useLoading } from "@/hooks/useLoading";
-import { useAppVersionInfo } from "@/hooks/useAPPVersion";
+import { useAppVersionInfo } from "@/hooks/useAppVersion";
 export default defineComponent({
   name: "App",
   components: {
@@ -27,9 +27,9 @@ export default defineComponent({
     Loading
   },
   setup() {
+    useThemeInitialize();
     const { showVersion } = useAppVersionInfo();
     showVersion();
-    useThemeInitialize();
     const { loadingState } = useLoading();
     return { loadingState };
   }

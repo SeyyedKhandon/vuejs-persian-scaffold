@@ -59,6 +59,7 @@ switch (webpack_run_mode) {
 const commitHash = require("child_process")
   .execSync("git rev-parse HEAD")
   .toString();
+
 plugins.push(
   new webpack.DefinePlugin({
     "process.env": {

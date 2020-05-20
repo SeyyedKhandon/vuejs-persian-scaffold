@@ -9,22 +9,12 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, Ref, ref } from "@vue/composition-api";
-import { getItem } from "@/api/api_helper/base_apis/base_api";
-import { useLoading } from "@/hooks/useLoading";
-import { GithubUser } from "@/types/github_users";
+import { defineComponent } from "@vue/composition-api";
+import { useGithubUsers } from "@/hooks/useGithubUsers";
 export default defineComponent({
   name: "GithubUsers",
   setup() {
-    const usernames: Ref<string[]> = ref([]);
-    const { showLoading, hideLoading } = useLoading();
-    showLoading();
-    getItem("https://api.github.com/users")
-      .then((result: GithubUser[]) => {
-        usernames.value = result.map((user: GithubUser) => user.login);
-        hideLoading();
-      })
-      .catch(hideLoading);
+    const { usernames } = useGithubUsers();
     return { usernames };
   }
 });

@@ -7,7 +7,7 @@ const getEndPoints = (): EndPoints => ({
   cdnServer: "", //process.env.VUE_APP_CDN_URI as string | any,
   oAuthServer: "", //process.env.VUE_APP_OAUTH_URI as string | any,
   origin: origin(),
-  hostUri: origin() + "/api/V0/panel/",
+  hostUri: origin(), //+ //process.env.VUE_APP_BASE_API like "/api/V0/panel/",
   login: origin() + "/login",
   authorizePath: "", //process.env.VUE_APP_ADFS_OAUTH2_AUTHORIZE
   authenticationPath: "", //process.env.VUE_APP_ADFS_OAUTH2_TOKEN,
