@@ -8,7 +8,8 @@
     "description": "فرآیند ایجاد ساختار در حال پیشرفت است."
   },
   "About": {
-    "info": "این صفحه درباره ما است."
+    "info": "این صفحه درباره ما است.",
+    "github_users": "لیست کاربران گیت هاب:"
   },
   "toastMessages": {
     "notSavedChanges": {

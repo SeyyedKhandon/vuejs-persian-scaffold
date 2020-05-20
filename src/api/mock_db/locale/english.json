@@ -8,7 +8,8 @@
     "description": "Vue.js Scaffolding is in progress"
   },
   "About": {
-    "info": "This is an about page"
+    "info": "This is an about page",
+    "github_users": "Github Users:"
   },
   "toastMessages": {
     "notSavedChanges": {

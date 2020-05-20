@@ -15,11 +15,9 @@
 import ChangeLanguage from "@/views/components/ChangeLanguage.vue";
 import ThemeSwitch from "@/views/components/ThemeSwitch.vue";
 import Loading from "@/views/components/Loading.vue";
-import { defineComponent, onMounted } from "@vue/composition-api";
+import { defineComponent } from "@vue/composition-api";
 import { useThemeInitialize } from "@/hooks/useApp";
 import { useLoading } from "@/hooks/useLoading";
-import { showErrorToast, showSuccessToast } from "@/hooks/useToastMessages";
-import { getItem } from "@/api/api_helper/base_apis/base_api";
 export default defineComponent({
   name: "App",
   components: {
@@ -29,13 +27,7 @@ export default defineComponent({
   },
   setup() {
     useThemeInitialize();
-    const { loadingState, hideLoading } = useLoading();
-    onMounted(() => {
-      setTimeout(hideLoading, 1000);
-      getItem("https://api.github.com/users").then((result: any) => {
-        console.log(result);
-      });
-    });
+    const { loadingState } = useLoading();
     return { loadingState };
   }
 });
