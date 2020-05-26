@@ -36,6 +36,20 @@
         "confirm": "Ok"
       }
     },
-    "defaultAPIErrorMessage": "An unknown network error has occurred."
+    "defaultAPIErrorMessage": "An unknown network error has occurred.",
+    "menu": {
+      "login": {
+        "title": "Login",
+        "pageTitle": "Login to Persian Vue.js scaffold"
+      },
+      "home": {
+        "title": "Home",
+        "pageTitle": "Persian Vue.js Scaffold"
+      },
+      "about": {
+        "title": "About",
+        "pageTitle": "Persian Vue.js Scaffold - page About"
+      }
+    }
   }
 }

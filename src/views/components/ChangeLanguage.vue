@@ -13,9 +13,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent, onMounted } from "@vue/composition-api";
 import Multiselect from "vue-multiselect";
 import { useLocale } from "@/hooks/locales/useLocale";
+import * as util from "@/hooks/locales/util_locale";
+import store from "@/store";
 
 export default defineComponent({
   name: "ChangeLanguage",
@@ -25,6 +27,9 @@ export default defineComponent({
   setup(_props, context) {
     const { languageTitles, currentLangTitle, updateLanguage } = useLocale(
       context
+    );
+    onMounted(() =>
+      util.changeRTL(util.getLocaleRTL(store.getters.getLanguage))
     );
     return {
       languageTitles,

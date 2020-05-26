@@ -2,7 +2,7 @@ import Vue from "vue";
 import * as R from "ramda";
 import store from "@/store";
 import VueI18n from "vue-i18n";
-import { onMounted, ref, SetupContext } from "@vue/composition-api";
+import { ref, SetupContext } from "@vue/composition-api";
 import * as util from "./util_locale";
 Vue.use(VueI18n);
 
@@ -24,7 +24,6 @@ export const useLocale = (context: SetupContext) => {
   const updateLanguage = (title = "English") => {
     R.pipe(util.getLocaleLang, doStateSideEffects, doHTMLSideEffects)(title);
   };
-  onMounted(() => util.changeRTL(util.getLocaleRTL(store.getters.getLanguage)));
   return {
     languageTitles,
     currentLangTitle,
@@ -36,3 +35,5 @@ export const i18n = new VueI18n({
   locale: util.getLocaleName(store.getters.getLanguage),
   messages: util.localeMessages as any // because of spec
 });
+export const i18n_t = (key: string, values = {}) =>
+  i18n.t(key, values) as string;

@@ -36,6 +36,20 @@
         "confirm": "باشه"
       }
     },
-    "defaultAPIErrorMessage": "یک خطای غیرمنتظره در شبکه رخ داده است."
+    "defaultAPIErrorMessage": "یک خطای غیرمنتظره در شبکه رخ داده است.",
+    "menu": {
+      "login": {
+        "title": "ورود به سامانه",
+        "pageTitle": "ورود به سامانه ساختار  Vue.js فارسی"
+      },
+      "home": {
+        "title": "خانه",
+        "pageTitle": "ساختار  Vue.js فارسی "
+      },
+      "about": {
+        "title": "درباره ما",
+        "pageTitle": "ساختار   Vue.js فارسی - صفحه درباره ما"
+      }
+    }
   }
 }

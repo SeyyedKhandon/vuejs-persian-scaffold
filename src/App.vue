@@ -5,8 +5,12 @@
     <Loading v-if="loadingState" />
     <vue-snotify />
     <div id="nav">
-      <router-link to="/">{{ $t("data.main_menu.home") }}</router-link> |
-      <router-link to="/about">{{ $t("data.main_menu.about") }}</router-link>
+      <template v-for="route in routes()">
+        <router-link :key="route.path" :to="route.path" v-if="route.meta">
+          {{ route.name }}
+        </router-link>
+        |
+      </template>
     </div>
     <router-view />
   </div>
@@ -19,6 +23,7 @@ import { defineComponent } from "@vue/composition-api";
 import { useThemeInitialize } from "@/hooks/useApp";
 import { useLoading } from "@/hooks/useLoading";
 import { useAppVersionInfo } from "@/hooks/useAppVersion";
+import { routes } from "@/router/routes";
 
 export default defineComponent({
   name: "App",
@@ -32,7 +37,7 @@ export default defineComponent({
     const { showVersion } = useAppVersionInfo();
     showVersion();
     const { loadingState } = useLoading();
-    return { loadingState };
+    return { loadingState, routes };
   }
 });
 </script>
