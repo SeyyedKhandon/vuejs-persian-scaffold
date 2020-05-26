@@ -19,6 +19,7 @@ import { defineComponent } from "@vue/composition-api";
 import { useThemeInitialize } from "@/hooks/useApp";
 import { useLoading } from "@/hooks/useLoading";
 import { useAppVersionInfo } from "@/hooks/useAppVersion";
+
 export default defineComponent({
   name: "App",
   components: {
