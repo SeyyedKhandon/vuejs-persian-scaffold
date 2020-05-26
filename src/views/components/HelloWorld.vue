@@ -2,7 +2,7 @@
   <div class="hello">
     <h1 class="title-color">{{ msg }}</h1>
     <p class="content-color">
-      {{ $t("HelloWorld.description") }}
+      {{ $t("data.HelloWorld.description") }}
     </p>
   </div>
 </template>

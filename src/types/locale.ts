@@ -1,8 +1,16 @@
 export interface Locales {
-  locales: LocaleItem[];
+  [index: string]: LocaleItem;
 }
 export interface LocaleItem {
+  spec: LocaleItemSpec;
+  data: {
+    [index: string]: any;
+  };
+}
+export interface LocaleItemSpec {
   name: string;
   title: string;
-  slug: string;
+  lang: string;
+  rtl: false;
 }
+

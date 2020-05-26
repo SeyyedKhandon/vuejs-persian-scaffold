@@ -1,8 +1,8 @@
 <template>
   <multiselect
-    v-model="currentLanguage"
+    v-model="currentLangTitle"
     class="locale_multiselect"
-    :options="languages"
+    :options="languageTitles"
     :close-on-select="true"
     :searchable="false"
     :show-labels="false"
@@ -15,7 +15,7 @@
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api";
 import Multiselect from "vue-multiselect";
-import { useLocale } from "@/hooks/useLocale";
+import { useLocale } from "@/hooks/locales/useLocale";
 
 export default defineComponent({
   name: "ChangeLanguage",
@@ -23,10 +23,12 @@ export default defineComponent({
     Multiselect
   },
   setup(_props, context) {
-    const { languages, currentLanguage, updateLanguage } = useLocale(context);
+    const { languageTitles, currentLangTitle, updateLanguage } = useLocale(
+      context
+    );
     return {
-      languages,
-      currentLanguage,
+      languageTitles,
+      currentLangTitle,
       updateLanguage
     };
   }

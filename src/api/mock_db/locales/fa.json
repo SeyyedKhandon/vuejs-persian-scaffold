@@ -1,0 +1,41 @@
+{
+  "spec": {
+    "title": "پارسی",
+    "name": "persian",
+    "lang": "fa-IR",
+    "rtl": true
+  },
+  "data": {
+    "main_menu": {
+      "home": "خانه",
+      "about": "درباره ما"
+    },
+    "HelloWorld": {
+      "title": "به برنامه vuejs خوش آمدید.",
+      "description": "فرآیند ایجاد ساختار در حال پیشرفت است."
+    },
+    "About": {
+      "info": "این صفحه درباره ما است.",
+      "github_users": "لیست کاربران گیت هاب:"
+    },
+    "toastMessages": {
+      "notSavedChanges": {
+        "title": "تغییرات ذخیره نشده",
+        "text": "مایلید تغییراتتان را ذخیره نماییم؟",
+        "confirm": "بله",
+        "cancel": "خیر"
+      },
+      "deleteRequest": {
+        "title": "عملیات حذف {msg}",
+        "text": "آیا از حذف {title} با نام \"{item_label}\" مطمئن هستید؟",
+        "confirm": "بله، حذفش کن",
+        "cancel": "خیر، نگهش دار"
+      },
+      "deleteResponse": {
+        "title": "عملیات حذف",
+        "confirm": "باشه"
+      }
+    },
+    "defaultAPIErrorMessage": "یک خطای غیرمنتظره در شبکه رخ داده است."
+  }
+}

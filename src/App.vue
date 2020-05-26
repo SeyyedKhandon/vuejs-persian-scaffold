@@ -5,8 +5,8 @@
     <Loading v-if="loadingState" />
     <vue-snotify />
     <div id="nav">
-      <router-link to="/">{{ $t("main_menu.home") }}</router-link> |
-      <router-link to="/about">{{ $t("main_menu.about") }}</router-link>
+      <router-link to="/">{{ $t("data.main_menu.home") }}</router-link> |
+      <router-link to="/about">{{ $t("data.main_menu.about") }}</router-link>
     </div>
     <router-view />
   </div>

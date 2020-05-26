@@ -4,7 +4,7 @@ import { showErrorToast } from "@/hooks/useToastMessages";
 // import { api_logout } from "@/api/api_logout";
 import { AxiosError } from "axios";
 import { OAuthProvider, OAuthToken } from "@/types/api";
-import { i18n } from "@/hooks/useLocale";
+import { i18n } from "@/hooks/locales/useLocale";
 
 // Axios onRequestFulfilled
 export const onRequestFulfilled = (config: any) => {
@@ -99,7 +99,7 @@ const regularHttpErrorHandler = (error: AxiosError) => {
 const otherErrorHandler = (error: AxiosError) => {
   const isNetworkError = (current_message: string) =>
     error.message ? error.message : current_message;
-  const message = i18n.t("defaultAPIErrorMessage") as string;
+  const message = i18n.t("data.defaultAPIErrorMessage") as string;
   return isNetworkError(message);
 };
 
