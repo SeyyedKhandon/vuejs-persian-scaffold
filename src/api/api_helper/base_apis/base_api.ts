@@ -1,5 +1,5 @@
 import service from "@/api/api_helper/service/service";
-import { Pagination } from "@/types/api";
+import { Pagination } from "@/types/auth";
 import querystring from "query-string";
 import {
   deleteConfig,

@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosRequestConfig, Method } from "axios";
 import { getEndPoints } from "@/api/api_helper/EndPointHelper";
-import { OAuthToken } from "@/types/api";
+import { OAuthToken } from "@/types/auth";
 import store from "@/store";
 
 export const requestConfig = (method: Method, url: string, data: any = {}) => {

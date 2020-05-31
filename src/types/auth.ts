@@ -1,4 +1,12 @@
 // api types
+
+export enum RoleAccessLevel {
+  God = 0,
+  SuperAdmin = 1,
+  Admin = 2,
+  User = 10,
+  Viewer = 11
+}
 export interface Pagination {
   page: number;
   size: number;
@@ -7,6 +15,11 @@ export interface Pagination {
 export interface RegularLoginType {
   username: string;
   password: string;
+}
+export interface FakeLogin {
+  username: string;
+  role: RoleAccessLevel;
+  accessToken: string;
 }
 export interface EndPoints {
   apiServer: string;

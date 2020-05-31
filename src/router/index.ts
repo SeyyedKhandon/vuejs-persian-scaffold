@@ -1,9 +1,9 @@
 import Vue from "vue";
-import VueRouter, { RouteConfig } from "vue-router";
+import VueRouter from "./vue_router";
 import { routes } from "@/router/routes";
-// import { _import } from "@/router/util_router";
-import UserInterceptor from "./guards/auth";
+import AuthInterceptor from "./guards/auth";
 import RoleInterceptor from "./guards/role";
+// import { _import } from "@/router/util_router";
 
 Vue.use(VueRouter);
 
@@ -12,8 +12,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes: routes()
 });
-
-// router.beforeEach(UserInterceptor);
-// router.beforeEach(RoleInterceptor);
+router.beforeEach(AuthInterceptor);
+router.beforeEach(RoleInterceptor);
 
 export default router;

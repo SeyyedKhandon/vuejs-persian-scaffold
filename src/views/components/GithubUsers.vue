@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h3 class="title-color">{{ $t("data.About.github_users") }}</h3>
+    <h3 class="title-color">{{ $t("data.about.github_users") }}</h3>
     <ol class="github-users">
       <li v-for="username in usernames" :key="username" v-cloak>
         {{ username }}

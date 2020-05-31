@@ -1,14 +1,12 @@
-import { RouteConfig } from "vue-router";
 import Home from "@/views/pages/Home.vue";
 import Login from "@/views/pages/Login.vue";
-import { RoleAccessLevel } from "@/router/guards/role";
+import { RoleAccessLevel } from "@/types/auth";
 import { i18n_t } from "@/hooks/locales/useLocale";
 import { CustomRouteConfig } from "@/types/router";
-
-export const routes = (): Array<CustomRouteConfig> => [
+const routes = (): Array<CustomRouteConfig> => [
   {
     path: "/login",
-    name: i18n_t("data.menu.login.title"),
+    name: "login",
     component: Login,
     meta: {
       requiresAuth: false,
@@ -44,3 +42,5 @@ export const routes = (): Array<CustomRouteConfig> => [
     }
   }
 ];
+
+export { routes };

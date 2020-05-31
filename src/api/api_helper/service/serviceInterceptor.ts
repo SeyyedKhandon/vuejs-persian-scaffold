@@ -3,7 +3,7 @@ import router from "@/router";
 import { showErrorToast } from "@/hooks/useToastMessages";
 // import { api_logout } from "@/api/api_logout";
 import { AxiosError } from "axios";
-import { OAuthProvider, OAuthToken } from "@/types/api";
+import { OAuthProvider, OAuthToken } from "@/types/auth";
 import { i18n } from "@/hooks/locales/useLocale";
 
 // Axios onRequestFulfilled

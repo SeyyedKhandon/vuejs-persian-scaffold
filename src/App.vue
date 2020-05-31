@@ -1,12 +1,19 @@
 <template>
-  <div id="app">
+  <div id="app" :key="$store.getters.getLanguage">
     <ChangeLanguage />
     <ThemeSwitch />
     <Loading v-if="loadingState" />
     <vue-snotify />
     <div id="nav">
+      <button @click="logout" v-if="$store.getters.getFakeLogin.accessToken">
+        Log-out
+      </button>
       <template v-for="route in routes()">
-        <router-link :key="route.path" :to="route.path" v-if="route.meta">
+        <router-link
+          :key="route.path"
+          :to="route.path"
+          v-if="!route.meta.hidden"
+        >
           {{ route.name }}
         </router-link>
         |
@@ -24,6 +31,7 @@ import { useThemeInitialize } from "@/hooks/useApp";
 import { useLoading } from "@/hooks/useLoading";
 import { useAppVersionInfo } from "@/hooks/useAppVersion";
 import { routes } from "@/router/routes";
+import { useLogin } from "@/hooks/accessControl/useLogin";
 
 export default defineComponent({
   name: "App",
@@ -32,12 +40,13 @@ export default defineComponent({
     ThemeSwitch,
     Loading
   },
-  setup() {
+  setup(_props, context) {
     useThemeInitialize();
     const { showVersion } = useAppVersionInfo();
     showVersion();
     const { loadingState } = useLoading();
-    return { loadingState, routes };
+    const { logout } = useLogin(context);
+    return { loadingState, routes, logout };
   }
 });
 </script>

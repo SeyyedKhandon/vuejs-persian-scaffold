@@ -1,4 +1,4 @@
-import { EndPoints } from "@/types/api";
+import { EndPoints } from "@/types/auth";
 const pathName = (): string => window.location.pathname;
 const origin = (): string => window.location.origin;
 const getEndPoints = (): EndPoints => ({
