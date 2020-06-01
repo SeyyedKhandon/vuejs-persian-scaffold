@@ -50,6 +50,9 @@
         "wrong_username_or_pass": "Username or Password is in-correct."
       }
     },
+    "logout": {
+      "button": "Logout"
+    },
     "menu": {
       "login": {
         "title": "Login",

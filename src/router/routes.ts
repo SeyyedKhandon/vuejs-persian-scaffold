@@ -10,24 +10,26 @@ const routes = (): Array<CustomRouteConfig> => [
     component: Login,
     meta: {
       requiresAuth: false,
+      title: i18n_t("data.menu.login.title"),
       pageTitle: i18n_t("data.menu.login.pageTitle")
     }
   },
   {
     path: "/",
-    name: i18n_t("data.menu.home.title"),
+    name: "home",
     component: Home,
     meta: {
       requiresAuth: true,
       requiredLevel: RoleAccessLevel.User,
       hidden: false,
       breadcrumb: [{ title: i18n_t("data.menu.home.title"), url: "/" }],
+      title: i18n_t("data.menu.home.title"),
       pageTitle: i18n_t("data.menu.home.pageTitle")
     }
   },
   {
     path: "/about",
-    name: i18n_t("data.menu.about.title"),
+    name: "about",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -38,6 +40,7 @@ const routes = (): Array<CustomRouteConfig> => [
       requiredLevel: RoleAccessLevel.User,
       hidden: false,
       breadcrumb: [{ title: i18n_t("data.menu.about.title"), url: "/about" }],
+      title: i18n_t("data.menu.about.title"),
       pageTitle: i18n_t("data.menu.about.pageTitle")
     }
   }

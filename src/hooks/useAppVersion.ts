@@ -1,4 +1,4 @@
-export const AppVersion = {
+export const appVersion = {
   packageVersion: process.env.PACKAGE_VERSION || 0,
   packageName: process.env.PACKAGE_NAME || 0,
   packageBuildVersion: process.env.PACKAGE_BUILD_VERSION || 0,
@@ -14,11 +14,11 @@ export const useAppVersionInfo = () => {
     );
   const showVersion = () => {
     beautifulLog(
-      `APP '${AppVersion.packageName}' %c v${AppVersion.packageVersion}`
+      `APP '${appVersion.packageName}' %c v${appVersion.packageVersion}`
     );
-    beautifulLog(`Build %c v${AppVersion.packageBuildVersion}`);
-    beautifulLog(`Dev %c v${AppVersion.packageDevVersion}`);
+    beautifulLog(`Build %c v${appVersion.packageBuildVersion}`);
+    beautifulLog(`Dev %c v${appVersion.packageDevVersion}`);
     console.log(`%c ${"-".repeat(30)} `, `background: #bbbbbb36;`);
   };
-  return { beautifulLog, showVersion, AppVersion };
+  return { beautifulLog, showVersion, appVersion };
 };

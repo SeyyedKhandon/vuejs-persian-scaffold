@@ -6,7 +6,7 @@
     <vue-snotify />
     <div id="nav">
       <button @click="logout" v-if="$store.getters.getFakeLogin.accessToken">
-        Log-out
+        {{ $t("data.logout.button") }}
       </button>
       <template v-for="route in routes()">
         <router-link
@@ -14,7 +14,7 @@
           :to="route.path"
           v-if="!route.meta.hidden"
         >
-          {{ route.name }}
+          {{ route.meta.title }}
         </router-link>
         |
       </template>

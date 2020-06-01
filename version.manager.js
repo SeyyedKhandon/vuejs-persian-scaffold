@@ -1,7 +1,7 @@
 /*
  * the  idea is to track the development lifecycle by automatic version
- * the idea and it's code Developed by SeyyedMahdi Hassanpour
- * SeyyedKhandon@gmail.com
+ * author: SeyyedMahdi Hassanpour
+ * email:  SeyyedKhandon@gmail.com
  * */
 const fs = require("fs");
 const webpack = require("webpack");
