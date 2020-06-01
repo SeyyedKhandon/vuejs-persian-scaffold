@@ -15,5 +15,5 @@
   * functions
    background-image: gradient(header);
    box-shadow: shadow(header);
-   z-index: z-index(header);
+   z-index: z(header);
  </pre>

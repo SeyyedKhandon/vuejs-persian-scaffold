@@ -4,10 +4,12 @@
 @import "libs";
 
 // Our SCSS
-@import "reset";
 @import "variables";
 @import "functions";
 @import "mixins";
+
+// reset css
+@import "reset";
 
 // themes
 @import "themes";

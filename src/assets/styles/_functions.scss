@@ -9,3 +9,7 @@
 @function shadow($key) {
   @return map-get($shadows, $key);
 }
+
+@function margin($size){
+  @return $default-margin*$size+px;
+}
