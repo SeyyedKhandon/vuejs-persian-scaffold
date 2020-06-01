@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "Error404"
+  name: "Err404NotFound"
 };
 </script>
 

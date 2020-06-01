@@ -30,8 +30,8 @@ import { defineComponent } from "@vue/composition-api";
 import { useThemeInitialize } from "@/hooks/useApp";
 import { useLoading } from "@/hooks/useLoading";
 import { useAppVersionInfo } from "@/hooks/useAppVersion";
-import { routes } from "@/router/routes";
 import { useLogin } from "@/hooks/accessControl/useLogin";
+import { routes } from "@/router/routes/index.ts";
 
 export default defineComponent({
   name: "App",

@@ -1,20 +1,7 @@
 import Home from "@/views/pages/Home.vue";
-import Login from "@/views/pages/Login.vue";
 import { RoleAccessLevel } from "@/types/auth";
 import { i18n_t } from "@/hooks/locales/useLocale";
-import { CustomRouteConfig } from "@/types/router";
-const routes = (): Array<CustomRouteConfig> => [
-  {
-    path: "/login",
-    name: "login",
-    component: Login,
-    meta: {
-      requiresAuth: false,
-      icon: "Login",
-      title: i18n_t("data.menu.login.title"),
-      pageTitle: i18n_t("data.menu.login.pageTitle")
-    }
-  },
+const frameIn = () => [
   {
     path: "/",
     name: "home",
@@ -36,7 +23,7 @@ const routes = (): Array<CustomRouteConfig> => [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/pages/About.vue"),
+      import(/* webpackChunkName: "about" */ "@/views/pages/About.vue"),
     meta: {
       requiresAuth: true,
       requiredLevel: RoleAccessLevel.User,
@@ -46,13 +33,7 @@ const routes = (): Array<CustomRouteConfig> => [
       title: i18n_t("data.menu.about.title"),
       pageTitle: i18n_t("data.menu.about.pageTitle")
     }
-  },
-  // Redirect to 404 page, if no match found
-  {
-    path: "*",
-    name: "404",
-    component: () => import("../views/pages/errors/Error404.vue")
   }
 ];
 
-export { routes };
+export { frameIn };

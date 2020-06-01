@@ -1,10 +1,9 @@
 import Vue from "vue";
 import VueRouter from "./vue_router";
-import { routes } from "@/router/routes";
+import { routes } from "./routes";
 import AuthInterceptor from "./guards/auth";
 import RoleInterceptor from "./guards/role";
 import nProgress from "nprogress";
-// import { _import } from "@/router/util_router";
 
 Vue.use(VueRouter);
 
