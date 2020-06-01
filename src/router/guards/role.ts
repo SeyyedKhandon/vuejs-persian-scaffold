@@ -14,7 +14,7 @@ export default function checkRole(to: Route, from: Route, next: Function) {
       if (role <= requiredRole) {
         next();
       } else {
-        next("/login");
+        next("/403");
       }
     }
   }

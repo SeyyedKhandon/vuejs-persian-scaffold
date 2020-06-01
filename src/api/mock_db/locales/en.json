@@ -38,7 +38,7 @@
     },
     "defaultAPIErrorMessage": "An unknown network error has occurred.",
     "login": {
-      "title":"Login page",
+      "title": "Login page",
       "hint": "Enter admin/admin for username/password to log-in.",
       "username": "Enter Username",
       "password": "Enter Password",
@@ -71,6 +71,9 @@
       "error404": {
         "title": "404 page not found",
         "hint": "click here to go home"
+      },
+      "error403": {
+        "title": "403 Forbidden Access"
       }
     }
   }

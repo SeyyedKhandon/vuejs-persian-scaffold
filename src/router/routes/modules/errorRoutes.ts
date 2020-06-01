@@ -1,5 +1,8 @@
 const errorRoutes = [
-  // { path: '/403', component: Err403Forbidden },
+  {
+    path: "/403",
+    component: () => import("@/views/pages/errors/Err403ForbiddenAccess.vue")
+  },
   // { path: '/500', component: Err500InternalServerError },
   {
     path: "*",
