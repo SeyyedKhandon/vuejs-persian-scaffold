@@ -1,7 +1,7 @@
 import Login from "@/views/pages/Login.vue";
 import { i18n_t } from "@/hooks/locales/useLocale";
 
-const frameOut = () => [
+const outerRoutes = () => [
   {
     path: "/login",
     name: "login",
@@ -15,4 +15,4 @@ const frameOut = () => [
   }
 ];
 
-export { frameOut };
+export { outerRoutes };

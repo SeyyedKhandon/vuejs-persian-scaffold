@@ -1,10 +1,10 @@
 import { CustomRouteConfig } from "@/types/router";
 import { errorRoutes } from "./modules/errors";
-import { frameOut } from "./modules/frameOut";
-import { frameIn } from "./modules/frameIn";
+import { outerRoutes } from "./modules/outerRoutes";
+import { innerRoutes } from "./modules/innerRoutes";
 const routes = (): Array<CustomRouteConfig> => [
-  ...frameOut(),
-  ...frameIn(),
+  innerRoutes(),
+  ...outerRoutes(),
   ...errorRoutes
 ];
 
