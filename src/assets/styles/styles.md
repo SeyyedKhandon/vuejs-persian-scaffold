@@ -16,4 +16,6 @@
    background-image: gradient(header);
    box-shadow: shadow(header);
    z-index: z(header);
+   margin-top: margin(3);
+
  </pre>
