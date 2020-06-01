@@ -1,0 +1,41 @@
+//
+//html {
+//  font-size: 62.5%;
+//}
+//
+//body {
+//  background-color: #000;
+//  font-family: 'Hack', monospace;
+//}
+.error-404 {
+  a {
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .text__error,
+  .text__link {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .text__error {
+    margin-top: -35px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 2rem;
+  }
+
+  .text__link {
+    margin-top: 5px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 1.4rem;
+  }
+}

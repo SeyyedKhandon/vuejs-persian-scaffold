@@ -12,7 +12,7 @@
         <router-link
           :key="route.path"
           :to="route.path"
-          v-if="!route.meta.hidden"
+          v-if="!(route.meta ? route.meta.hidden : true)"
         >
           {{ route.meta.title }}
         </router-link>

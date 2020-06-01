@@ -10,6 +10,7 @@ const routes = (): Array<CustomRouteConfig> => [
     component: Login,
     meta: {
       requiresAuth: false,
+      icon: "Login",
       title: i18n_t("data.menu.login.title"),
       pageTitle: i18n_t("data.menu.login.pageTitle")
     }
@@ -23,6 +24,7 @@ const routes = (): Array<CustomRouteConfig> => [
       requiredLevel: RoleAccessLevel.User,
       hidden: false,
       breadcrumb: [{ title: i18n_t("data.menu.home.title"), url: "/" }],
+      icon: "Home",
       title: i18n_t("data.menu.home.title"),
       pageTitle: i18n_t("data.menu.home.pageTitle")
     }
@@ -40,9 +42,16 @@ const routes = (): Array<CustomRouteConfig> => [
       requiredLevel: RoleAccessLevel.User,
       hidden: false,
       breadcrumb: [{ title: i18n_t("data.menu.about.title"), url: "/about" }],
+      icon: "About",
       title: i18n_t("data.menu.about.title"),
       pageTitle: i18n_t("data.menu.about.pageTitle")
     }
+  },
+  // Redirect to 404 page, if no match found
+  {
+    path: "*",
+    name: "404",
+    component: () => import("../views/pages/errors/Error404.vue")
   }
 ];
 

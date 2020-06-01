@@ -66,6 +66,12 @@
         "title": "About",
         "pageTitle": "Persian Vue.js Scaffold - page About"
       }
+    },
+    "errorPages": {
+      "error404": {
+        "title": "404 page not found",
+        "hint": "click here to go home"
+      }
     }
   }
 }
