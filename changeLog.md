@@ -12,3 +12,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.3.1] - 2020-06-02
 ### Added
 - Add height,width=100% to html,body via _reset.scss
+- add changeLog
