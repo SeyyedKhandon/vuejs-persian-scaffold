@@ -1,9 +1,23 @@
-# vuejs-persian-scaffold
+# Vue.js persian scaffold
+#####TODO:
+- [x] Light/Dark theme
+- [x] MultiLanguage and rtl support
+- [x] Typescript
+- [x] Vuex
+- [x] PWA
+- [x] Prettier base config
+- [x] Jest unit testing
+- [x] Specialized 7-1 pattern scss structure
+- [x] Composition-api (inspired by React Hook best practices)
+- [x] Vue-router (using auth,role based guards based on enum)
+- [x] Base-Structure for Admin Templates
+- [x] Vue-router (using auth,role based guards based on enum)
+- [x] `Special Version System (this is a new idea/practice)`
+- [x] `Special Project Conventions (this is a new idea/practice)`
+- [x] ChangeLog
+- [ ] MultiTheme using JSON
+- [ ] Theme customizer
 
-this Scaffold using Typescript,PWA,vuex,vue-router, jest,eslint and prettier, ramda.js
-
-RTL support
-Theme Switcher Support using css variables
 
 ## Project setup
 
