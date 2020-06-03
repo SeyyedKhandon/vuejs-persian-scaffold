@@ -20,7 +20,7 @@
 - [x] ChangeLog
 
 #####Todo:
-
+- [ ] Use typescript declare module to add Global Types automatically
 - [ ] MultiTheme using JSON
 - [ ] Theme customizer
 - [ ] Using simple icon pack
